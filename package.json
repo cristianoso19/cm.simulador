@@ -4,7 +4,9 @@
   "description": "Simulador de comisiones",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "postcss src/style.css -o dist/output.css",
+    "dev": "postcss src/style.css -o dist/output.css --watch"
   },
   "keywords": [],
   "author": "",
