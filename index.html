@@ -3,29 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Simulador</title>
     <link rel="stylesheet" href="./dist/output.css">
 </head>
 <body class="m-3">
     <header>
-        <h1 class="text-xl text-center">Comycomec Simulador</h1>
+        <h1 class="text-2xl font-bold text-center">🍀 Comycomec Simulador</h1>
     </header> 
-    <main>
-        <section>
-            <h2>Comisiones por venta</h2>
-            <form action="POST" class="flex flex-col">
-               <label for="presupuesto">Presupuesto asignado</label> 
-               <input id="presupuesto" type="text" name="" class="border-2 rounded-lg h-9 ">
-               <label for="presupuesto">Monto de venta</label> 
-               <input id="presupuesto" type="text" name="" class="border-2 rounded-lg h-9 ">
-            </form>
+    <main class="my-6">
+        <section class="flex flex-row flex-wrap m-2">
+            <input id="tab-one" type="radio" name="tabs" class="peer/tab-one opacity-0 absolute" checked />
+            <label for="tab-one" class="font-bold bg-slate-300 hover:bg-slate-200 peer-checked/tab-one:bg-amber-200 cursor-default p-4 rounded-t-lg block w-1/2">
+                📈 Venta
+            </label>
+            <input id="tab-two" type="radio" name="tabs" class="peer/tab-two opacity-0 absolute" />
+            <label for="tab-two" class="font-bold bg-slate-300 hover:bg-slate-200 peer-checked/tab-two:bg-amber-200 cursor-default p-4 rounded-t-lg block w-1/2">
+               💰️ Cobro
+            </label>
+            <div class="bg-amber-200 hidden peer-checked/tab-one:block p-4 w-full">
+                <section>
+                    <h2 class="my-2 text-lg text-center font-semibold">Comisiones por venta</h2>
+                    <form action="/" method="post" id="calculoform" class="flex flex-col space-y-1">
+                        <label for="presupuesto">Presupuesto:</label> 
+                        <input id="presupuesto" type="text" name="" class="mt-1 w-full rounded-md border-2 border-current sm:text-sm px-3 h-12">
+                        <label for="venta">Venta:</label> 
+                        <input id="venta" type="text" name="" class="mt-1 w-full rounded-md border-2 border-current sm:text-sm px-3 h-12">
+                    </form>
+                        <button type="button" onclick="calcularCumplimiento()" class="mt-6 w-full bg-slate-900 text-slate-100 rounded-md border-2 border-current h-12">Calcular</button>
+                <section/>
+                <section class="my-6" >
+                    <h2 class="text-lg font-semibold text-center">Resultados</h2>
+                    <div class="" id="resultado">
+                    </div>
+                </section>
+            </div>
+            <div class="bg-amber-200 hidden peer-checked/tab-two:block p-4 w-full">
+                <section>
+                    <h2 class="my-2 text-lg text-center font-semibold">Comisiones por cobro</h2>
+                    <form id="calculoForm">
+                        <label for="cobro50">Cobros a 50 dias:</label>
+                        <input type="text" id="cobro50" class="mt-1 w-full rounded-md border-2 border-current sm:text-sm px-3 h-12" required>
+                        <label for="cobro80">Cobros de 50 a 80 dias:</label>
+                        <input type="text" id="cobro80" class="mt-1 w-full rounded-md border-2 border-current sm:text-sm px-3 h-12" required>
+                    </form>
+                    <button type="button" onclick="calcularCobro()" class="mt-6 w-full bg-slate-900 text-slate-100 rounded-md border-2 border-current h-12">Calcular</button>
+                </section>
+                <section class="my-6" >
+                    <h2 class="text-lg font-semibold text-center">Resultados</h2>
+                    <div class="" id="resultadoCobro">
+                    </div>
+                </section>
+            </div>
         </section>
-        <section>
-
-        </section>
-
     </main>
 
-
+<script src="./src/main.js"></script>
 </body>
 </html>
