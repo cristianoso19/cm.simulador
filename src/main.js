@@ -48,8 +48,8 @@ function calcularCobro() {
 
     // Mostrar el resultado
     const resultado = `
-        <p class="text-lg">Comision a 50 dias (0.5%): <span class="font-bold"> $${porcentajeCobro50.toFixed(2)}</span></p>
-        <p class="text-lg">Comision a 80 dias (1%): <span class="font-bold"> $${porcentajeCobro80.toFixed(2)}</span></p>
+        <p class="text-lg">Comision a 50 dias (1%): <span class="font-bold"> $${porcentajeCobro50.toFixed(2)}</span></p>
+        <p class="text-lg">Comision a 80 dias (0.5%): <span class="font-bold"> $${porcentajeCobro80.toFixed(2)}</span></p>
     `;
     document.getElementById('resultadoCobro').innerHTML = resultado;
 }
